@@ -1,2 +1,6 @@
 # unleash-docker
-Docker container for unleash
+
+```bash
+$ docker-compose build
+$ docker-compose up
+```
