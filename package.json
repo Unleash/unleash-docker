@@ -1,12 +1,10 @@
 {
   "name": "unleash-docker",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Docker images for unleash.",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
-    "migrate-and-start": "npm run db-migrate && npm run start",
-    "db-migrate": "db-migrate up",
+    "start": "NODE_ENV=production unleash",
     "test:ci": "echo 'no tests for unleash-docker';"
   },
   "engines": {
@@ -15,8 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "db-migrate": "0.9.25",
-    "mkdirp": "^0.5.1",
-    "unleash-server": "^1.0.0-alpha.2"
+    "unleash-server": "^2.0.0-alpha.3"
   }
 }
