@@ -1,9 +1,12 @@
-FROM nodesource/wheezy:6
+FROM node:7.5
 
-COPY . .
+COPY package.json ./
 
 RUN npm install --production
 
+COPY . .
+
 EXPOSE 4242
 
-CMD unleash
+CMD node index.js
+
