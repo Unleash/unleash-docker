@@ -9,4 +9,3 @@ COPY . .
 EXPOSE 4242
 
 CMD node index.js
-
