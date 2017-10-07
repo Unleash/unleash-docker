@@ -8,7 +8,13 @@ services:
       DATABASE_URL: postgres://postgres:unleash@db/postgres
     depends_on:
       - db
-    command: sh -c './wait-for db:5432 -- npm run start'
+    command: > 
+      sh -c "
+        while ! nc -z db 5432; do
+          echo 'Postgress is unavailable.'
+          sleep 1
+        done
+        npm run start"
   db:
     expose:
       - "5432"
