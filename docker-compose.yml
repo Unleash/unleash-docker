@@ -11,7 +11,7 @@ services:
     command: > 
       sh -c "
         while ! nc -z db 5432; do
-          echo 'Postgress is unavailable.'
+          echo 'Postgres is unavailable.'
           sleep 1
         done
         npm run start"
