@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "unleash-server": "^3.0.0"
+    "unleash-server": "^3.0.4"
   }
 }
