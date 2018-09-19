@@ -17,3 +17,11 @@ https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-m
 $ docker-compose build
 $ docker-compose up
 ```
+
+## Upgrade version
+When we upgrade the `unleash-version` this project should be tagged with the same version number.
+
+```bash
+git tag -a v3.1.1 -m "upgrade to unleash-server v3.1.1"
+git push origin master --follow-tags
+```
