@@ -3,12 +3,12 @@
 We have published this image on docker-hub. 
 
 ```bash
-docker pull unleashorg/unleash-server
-docker run -d -e DATABASE_URL=postgres://unleash_user:passord@10.200.229.44:5432/unleash unleashorg/unleash-server
+docker pull unleashorg/unleash-server:3.1
+docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash unleashorg/unleash-server
 ```
 
 
-Sepcifying secrets as environment variables is considered a bad security practice. Therfore you can instead specify a file where unleash can read the database url. This is done via the `DATABASE_URL_FILE` environment variable. 
+Specifying secrets as environment variables are considered a bad security practice. Therfore you can instead specify a file where unleash can read the database secret. This is done via the `DATABASE_URL_FILE` environment variable. 
 
 
 ## Work locally with this repo 
@@ -38,6 +38,15 @@ When we upgrade the `unleash-version` this project should be tagged with the sam
 
 ```bash
 git tag -a 3.1.1 -m "upgrade to unleash-server 3.1.1"
+git push origin master --follow-tags
+```
+
+You might also want to update the minor tag:
+
+```bash
+git tag -d 3.1
+git push origin :3.1
+git tag -a 3.1 -m "Update 3.1 tag"
 git push origin master --follow-tags
 ```
 
