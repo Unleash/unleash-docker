@@ -7,7 +7,8 @@ docker pull unleashorg/unleash-server
 docker run -d -e DATABASE_URL=postgres://unleash_user:passord@10.200.229.44:5432/unleash unleashorg/unleash-server
 ```
 
-Sepcifying secrets as environment variables is considered a bad security practice. Therfore you can instead specify a file where unleash can read the database url via the `DATABASE_URL_FILE` environement variable. 
+
+Sepcifying secrets as environment variables is considered a bad security practice. Therfore you can instead specify a file where unleash can read the database url. This is done via the `DATABASE_URL_FILE` environment variable. 
 
 
 ## Work locally with this repo 
