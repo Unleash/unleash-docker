@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.7"
 services:
   web:
     build: .
@@ -18,4 +18,4 @@ services:
   db:
     expose:
       - "5432"
-    image: postgres:10-alpine
+    image: postgres:11-alpine
