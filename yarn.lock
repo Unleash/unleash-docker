@@ -129,12 +129,10 @@ async@^2.6.1:
   dependencies:
     lodash "^4.17.10"
 
-async@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.6.2.tgz#18330ea7e6e313887f5d2f2a904bac6fe4dd5381"
-  integrity sha512-H1qVYh1MYhEEFLsP97cVKqCGo7KfCyTt6uEWqsTBr9SO84oK9Uwbyd/yCW+6rKJLHksBNUVWZDAjfS+Ccx0Bbg==
-  dependencies:
-    lodash "^4.17.11"
+async@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.0.1.tgz#dfeb34657d1e63c94c0eee424297bf8a2c9a8182"
+  integrity sha512-ZswD8vwPtmBZzbn9xyi8XBQWXH3AvOQ43Za1KWYq7JeycrZuUYzx01KvHcVbXltjqH4y0MWrQ33008uLTqXuDw==
 
 async@~0.9.0:
   version "0.9.2"
@@ -344,6 +342,11 @@ commander@^2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
+
+commander@^2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
+  integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
 component-emitter@^1.2.1:
   version "1.2.1"
@@ -2819,18 +2822,18 @@ universalify@^0.1.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 
-unleash-frontend@3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-3.2.4.tgz#741be5f50cd14cbe60e17f06486511dbde28a419"
-  integrity sha512-Jaes2RfVHqbpVnwTF9NbykJ3vq6FihvsI38wd4O/mjr47FrfJRHEQYpHrDiWhVXYtdcFBLYYfoxmMSdvUe2MCw==
+unleash-frontend@3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-3.2.5.tgz#9b15012698d6be079abfb4271fd4c57f92be4bcc"
+  integrity sha512-mFE6+BA7+11vshF9rjUUreK6hlvBZyResXhp6tG+Awgk2y9DRzV/0/3F6la5XDk2fzalkZzpB09XOaaktvxMRg==
 
-unleash-server@^3.2.9:
-  version "3.2.9"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-3.2.9.tgz#230af12d9ccdd59ba55fc31e2a5ceb20fbaf26b5"
-  integrity sha512-cs6bQt/9MKDyjjiy24pBdeEosh0by8CZ14wC7u2mjqWqu2W8PMSrt4CpCeKQQyeNE/FIG8L+ylWDOkrWcTBmCQ==
+unleash-server@^3.2.12:
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-3.2.12.tgz#8b65fee9d7464c16a17adfbf28d80e0808c79e8a"
+  integrity sha512-iLLiL1HgWmmX3+Ov4x/+i6bJP9evvX5HyF+AgQOsDt9rdyGoCSAk9gs3dK1g6GdgDeCX4wiyLq8Hp4pI4ir8Ug==
   dependencies:
-    async "^2.6.2"
-    commander "^2.19.0"
+    async "^3.0.1"
+    commander "^2.20.0"
     compression "^1.7.3"
     cookie-parser "^1.4.4"
     cookie-session "^2.0.0-beta.3"
@@ -2855,7 +2858,7 @@ unleash-server@^3.2.9:
     prometheus-gc-stats "^0.6.1"
     response-time "^2.3.2"
     serve-favicon "^2.5.0"
-    unleash-frontend "3.2.4"
+    unleash-frontend "3.2.5"
     yallist "^3.0.3"
     yargs "^13.2.1"
 
