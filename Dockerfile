@@ -1,8 +1,8 @@
-FROM node:8-alpine
+FROM node:10-alpine
 
 COPY package.json ./
 
-RUN npm install --production
+RUN yarn install --production
 
 COPY . .
 
