@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "unleash-server": "^3.2.13"
+    "unleash-server": "^3.2.14"
   }
 }

@@ -2792,10 +2792,10 @@ unleash-frontend@3.2.5:
   resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-3.2.5.tgz#9b15012698d6be079abfb4271fd4c57f92be4bcc"
   integrity sha512-mFE6+BA7+11vshF9rjUUreK6hlvBZyResXhp6tG+Awgk2y9DRzV/0/3F6la5XDk2fzalkZzpB09XOaaktvxMRg==
 
-unleash-server@^3.2.12:
-  version "3.2.13"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-3.2.13.tgz#51b712f5a0f97068884db6e1d94d79236b0a4daf"
-  integrity sha512-k6Nc2G01YFgfEcLMgAwDqktj6E+TUPvMjHQLRQvDmcezeOLXgLI7w+c6bKmZw6i9Mbbyo3Cv4mrHWRK7JpMWMA==
+unleash-server@^3.2.14:
+  version "3.2.14"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-3.2.14.tgz#8b7ab0d8371aae2aa97ed69a8a10144c38e1d7e3"
+  integrity sha512-trV7zsLP5e24a6jOsYw3RauVIyCtgYcRR7WqGzBcahRW9UUVN8ERDVQE9iJASyWHAnKUchtTCKtj4cEd556U6Q==
   dependencies:
     async "^3.0.1"
     commander "^2.20.0"
