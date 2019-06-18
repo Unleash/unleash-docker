@@ -7,7 +7,7 @@
     "test:ci": "echo 'no tests for unleash-docker';"
   },
   "engines": {
-    "node": "8"
+    "node": ">=8"
   },
   "author": "",
   "license": "ISC",
