@@ -12,6 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@exlinc/keycloak-passport": "^1.0.2",
+    "@passport-next/passport": "^3.1.0",
+    "@passport-next/passport-google-oauth2": "^1.0.0",
+    "basic-auth": "^2.0.1",
+    "passport": "^0.4.1",
     "unleash-server": "^3.2.30"
   }
 }
