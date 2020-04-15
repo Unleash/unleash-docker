@@ -45,7 +45,7 @@ You might also want to update the minor tag:
 ```bash
 git tag -d 3.3
 git push origin :3.3
-git tag -a 3.3 -m "Update 3.1 tag"
+git tag -a 3.3 -m "Update 3.3 tag"
 git push origin master --follow-tags
 ```
 
