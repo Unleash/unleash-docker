@@ -1,8 +1,8 @@
 FROM node:12-alpine
 
-COPY package.json ./
+COPY package.json package-lock.json ./
 
-RUN yarn install --production
+RUN npm ci
 
 COPY . .
 

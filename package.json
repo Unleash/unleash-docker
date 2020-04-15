@@ -7,7 +7,7 @@
     "test:ci": "echo 'no tests for unleash-docker';"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,6 @@
     "@passport-next/passport-google-oauth2": "^1.0.0",
     "basic-auth": "^2.0.1",
     "passport": "^0.4.1",
-    "unleash-server": "^3.2.30"
+    "unleash-server": "^3.3.0"
   }
 }
