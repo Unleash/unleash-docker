@@ -8,15 +8,12 @@
  * You should read Using OAuth 2.0 to Access Google APIs:
  * https://developers.google.com/identity/protocols/OAuth2
  *
- * This example assumes that all users authenticating via
- * google should have access. You would probably limit access
- * to users you trust.
- *
  * The implementation assumes the following environment variables:
  *
  *  - GOOGLE_CLIENT_ID
  *  - GOOGLE_CLIENT_SECRET
  *  - GOOGLE_CALLBACK_URL
+ *  - ALLOWED_DOMAIN
  */
 
 const passport = require('@passport-next/passport');
