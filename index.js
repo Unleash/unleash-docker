@@ -2,6 +2,16 @@
 
 const unleash = require('unleash-server');
 
-let options = {};
+const enableGoogleOauth = require('./google-auth-hook');
 
-unleash.start(options);
+unleash
+    .start({
+        adminAuthentication: 'custom',
+        preRouterHook: enableGoogleOauth,
+    })
+    .then(server => {
+        // eslint-disable-next-line no-console
+        console.log(
+            `Unleash started on http://localhost:${server.app.get('port')}`,
+        );
+    });
