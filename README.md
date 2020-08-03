@@ -36,16 +36,16 @@ https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-m
 When we upgrade the `unleash-version` this project should be tagged with the same version number.
 
 ```bash
-git tag -a 3.3.0 -m "upgrade to unleash-server 3.3.0"
+git tag -a 3.4.2 -m "upgrade to unleash-server 3.4.2"
 git push origin master --follow-tags
 ```
 
 You might also want to update the minor tag:
 
 ```bash
-git tag -d 3.3
-git push origin :3.3
-git tag -a 3.3 -m "Update 3.3 tag"
+git tag -d 3.4
+git push origin :3.4
+git tag -a 3.4 -m "Update 3.4 tag"
 git push origin master --follow-tags
 ```
 
