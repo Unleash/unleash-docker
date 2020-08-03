@@ -3,7 +3,7 @@
 We have published this image on docker-hub. 
 
 ```bash
-docker pull unleashorg/unleash-server:3.3
+docker pull unleashorg/unleash-server:3.4
 docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash unleashorg/unleash-server
 ```
 
