@@ -72,6 +72,7 @@ function googleAdminAuth(app) {
 
   app.use('/api/admin/', (req, res, next) => {
     let emailNotAllowedError = ''
+    let showInvalidEmailError = !!(req.user && req.user.email)
     if (req.user && req.user.email && req.user.email.match(allowedUsers)) {
       return next()
     } else {
@@ -85,9 +86,9 @@ function googleAdminAuth(app) {
         new unleash.AuthenticationRequired({
           path: '/api/admin/login',
           type: 'custom',
-          message:
-            emailNotAllowedError ||
-            `You have to identify yourself in order to use Unleash.
+          message: showInvalidEmailError
+            ? emailNotAllowedError
+            : `You have to identify yourself in order to use Unleash.
                       Click the button and follow the instructions.`,
         })
       )
