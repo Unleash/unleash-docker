@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "test:ci": "echo 'no tests for unleash-docker';"
+    "test:ci": "echo 'no tests for unleash-docker';",
+    "dev": "docker-compose up --build",
+    "dev:google": "docker-compose  -f docker-compose.yml -f docker-compose.google.yml up --build"
   },
   "engines": {
     "node": ">=12"
@@ -12,11 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@exlinc/keycloak-passport": "^1.0.2",
-    "@passport-next/passport": "^3.1.0",
-    "@passport-next/passport-google-oauth2": "^1.0.0",
     "basic-auth": "^2.0.1",
     "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
     "unleash-server": "^3.6.0"
   }
 }
