@@ -11,3 +11,5 @@ services:
       GOOGLE_CALLBACK_URL: # use ngrok.com to get expose this app to the internet. EG: https://20ae209752e23.ngrok.io/api/auth/callback
       # Allows any gmail user, or steve@buscemi.com
       ALLOWED_USERS_REGEX: "^.+@gmail.com$$|steve@buscemi.com" # use $$ to escape $.
+      # This protects your api, make sure it's strong and unique. Consider a password manager generator
+      SHARED_SECRET: # Add your own unique strong secret here.
