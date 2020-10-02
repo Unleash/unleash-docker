@@ -8,7 +8,7 @@ services:
       DATABASE_URL: postgres://postgres:unleash@db/postgres
     depends_on:
       - db
-    command: > 
+    command: >
       sh -c "
         while ! nc -z db 5432; do
           echo 'Postgres is unavailable.'

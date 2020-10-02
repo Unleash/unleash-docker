@@ -1,0 +1,13 @@
+# Copy this file to docker-compose.google.yml
+# Create your own oauth credentials at: https://console.developers.google.com/apis/credentials
+# npm run dev:google
+version: "3.3"
+services:
+  web:
+    environment:
+      DATABASE_URL: postgres://postgres:unleash@db/postgres
+      GOOGLE_CLIENT_ID: # Add your client id
+      GOOGLE_CLIENT_SECRET: # Add your client secret here
+      GOOGLE_CALLBACK_URL: # use ngrok.com to get expose this app to the internet. EG: https://20ae209752e23.ngrok.io/api/auth/callback
+      # Allows any gmail user, or steve@buscemi.com
+      ALLOWED_USERS_REGEX: "^.+@gmail.com$$|steve@buscemi.com" # use $$ to escape $.
