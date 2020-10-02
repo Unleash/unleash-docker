@@ -71,8 +71,12 @@ function googleAdminAuth(app) {
   })
 
   app.use('/api/admin/', (req, res, next) => {
+    let emailNotAllowedError = ''
     if (req.user && req.user.email && req.user.email.match(allowedUsers)) {
       return next()
+    } else {
+      emailNotAllowedError =
+        'Your email was not on the approved email list. Check with your administrator.'
     }
     // Instruct unleash-frontend to pop-up auth dialog
     return res
@@ -81,7 +85,9 @@ function googleAdminAuth(app) {
         new unleash.AuthenticationRequired({
           path: '/api/admin/login',
           type: 'custom',
-          message: `You have to identify yourself in order to use Unleash.
+          message:
+            emailNotAllowedError ||
+            `You have to identify yourself in order to use Unleash.
                       Click the button and follow the instructions.`,
         })
       )
