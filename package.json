@@ -17,5 +17,8 @@
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "unleash-server": "^3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0"
   }
 }
