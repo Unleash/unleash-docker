@@ -1,3 +1,11 @@
+* [Use this image](#use-this-image)
+* [Environment Variables](#environment-variables)
+  * [Example: connecting with the node-sdk](#example-connecting-with-the-node-sdk)
+* [Work locally with this repo](#work-locally-with-this-repo)
+  * [Testing google oauth](#testing-google-oauth)
+  * [Requirements](#requirements)
+* [Upgrade version](#upgrade-version)
+
 ## Use this image
 
 We have published this image on docker-hub.
@@ -9,7 +17,55 @@ docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash un
 
 Specifying secrets as environment variables are considered a bad security practice. Therefore, you can instead specify a file where unleash can read the database secret. This is done via the `DATABASE_URL_FILE` environment variable.
 
+## Environment Variables
+```yml
+#######################################################
+# Database Connection
+#######################################################
+# Database to connection string
+DATABASE_URL: postgres://postgres:unleash@db/postgres
+#######################################################
+# Google Oauth
+# create an oauth credential here: https://console.developers.google.com/apis/credentials
+#######################################################
+# Google client id for oauth
+GOOGLE_CLIENT_ID: # insert your id here
+GOOGLE_CLIENT_SECRET: # insert your secret here
+# Callback url, should end in 'api/auth/callback'. In this example, the
+# BASE_URI_PATH is unleash, so the url is:
+# <my domain>/<BASE_URI_PATH>/api/auth/callback
+GOOGLE_CALLBACK_URL: https://mywebsite.com/unleash/api/auth/callback
+# Regular expression to check for valid email addresses. If you want to
+# simply list explicit emails consider something like this:
+# ^(alice@mywebsite\.com|bob@mywebsite\.com|charlie@mywebsite\.com)$
+ALLOWED_USERS_REGEX: ^.+@mywebsite.com$
 
+# A shared secret that is required to use api from the an sdk, see the example below
+SHARED_SECRET: asdfasdf
+# base uri to serve the service. Useful if this is behind a reverse proxy or load balancer.
+BASE_URI_PATH: /unleash
+
+```
+### Example: connecting with the node-sdk
+```js
+const { initialize } = require("unleash-client");
+const initializeUnleash = () =>
+    new Promise((resolve, reject) => {
+      const instance = initialize({
+        url: `https://mywebsite.com/unleash/api`,
+        appName: "my app",
+        instanceId: "app",
+      });
+      instance.on("error", (error) => {
+        console.error('Error connecting', error)
+        // reject(error) // You could reject this if you wanted, but there may be errors unrelated to registered.
+      });
+      instance.on("registered", (clientData) => {
+        resolve(instance);
+      });
+    });
+
+```
 ## Work locally with this repo
 Start by cloning this repository.
 
