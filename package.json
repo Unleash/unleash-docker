@@ -6,7 +6,9 @@
     "start": "NODE_ENV=production node index.js",
     "test:ci": "echo 'no tests for unleash-docker';",
     "dev": "docker-compose up --build",
-    "dev:google": "docker-compose  -f docker-compose.yml -f docker-compose.google.yml up --build"
+    "dev:google": "docker-compose  -f docker-compose.yml -f docker-compose.google.yml up --build",
+    "dev:shared-secret": "docker-compose  -f docker-compose.yml -f docker-compose.shared-secret.yml up --build",
+    "test": "jest"
   },
   "engines": {
     "node": ">=12"
@@ -19,6 +21,9 @@
     "unleash-server": "^3.6.0"
   },
   "devDependencies": {
-    "eslint": "^7.10.0"
+    "eslint": "^7.10.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "jest": "^26.4.2",
+    "unleash-client": "^3.3.6"
   }
 }
