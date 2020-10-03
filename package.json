@@ -8,7 +8,7 @@
     "dev": "docker-compose up --build",
     "dev:google": "docker-compose  -f docker-compose.yml -f docker-compose.google.yml up --build",
     "dev:shared-secret": "docker-compose  -f docker-compose.yml -f docker-compose.shared-secret.yml up --build",
-    "test": "jest"
+    "test": "jest --runInBand --bail"
   },
   "engines": {
     "node": ">=12"

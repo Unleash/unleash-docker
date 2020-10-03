@@ -11,8 +11,9 @@ const allowedUsers = new RegExp(process.env.ALLOWED_USERS_REGEX);
 const enableGoogleLogin = !!GOOGLE_CLIENT_ID;
 const baseUriPath = process.env.BASE_URI_PATH || "/";
 const getPath = (s) => {
-  console.log("route: ", join(baseUriPath, s));
-  return "/" + join(baseUriPath, s);
+  const p = join(baseUriPath, s);
+  console.log("added route:", p);
+  return p;
 };
 if (enableGoogleLogin) {
   passport.use(
@@ -44,24 +45,24 @@ function googleAdminAuth(app) {
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((user, done) => done(null, user));
   app.get(
-    getPath("admin/login"),
+    getPath("api/admin/login"),
     passport.authenticate("google", { scope: ["email"] })
   );
 
   app.get(
-    getPath("auth/callback"),
+    getPath("api/auth/callback"),
     passport.authenticate("google", {
       successRedirect: getPath("/"),
-      failureRedirect: getPath("admin/error-login"),
+      failureRedirect: getPath("api/admin/error-login"),
     })
   );
 
-  app.get(getPath("admin/error-login"), (req, res) => {
+  app.get(getPath("api/admin/error-login"), (req, res) => {
     return res
       .status("401")
       .json(
         new unleash.AuthenticationRequired({
-          path: getPath("admin/login"),
+          path: getPath("api/admin/login"),
           type: "custom",
           message: `There was an error authenticating.`,
         })
@@ -69,7 +70,7 @@ function googleAdminAuth(app) {
       .end();
   });
 
-  app.use(getPath("admin/"), (req, res, next) => {
+  app.use(getPath("api/admin/"), (req, res, next) => {
     let emailNotAllowedError = "";
     let showInvalidEmailError = !!(req.user && req.user.email);
     if (req.user && req.user.email && req.user.email.match(allowedUsers)) {
@@ -83,7 +84,7 @@ function googleAdminAuth(app) {
       .status("401")
       .json(
         new unleash.AuthenticationRequired({
-          path: getPath("admin/login"),
+          path: getPath("api/admin/login"),
           type: "custom",
           message: showInvalidEmailError
             ? emailNotAllowedError
@@ -95,14 +96,23 @@ function googleAdminAuth(app) {
   });
 }
 
+const logger = (app) => {
+  app.use((req, res, next) => {
+    console.log("req:", req.path);
+    next();
+  });
+};
 const sharedSecret = process.env.SHARED_SECRET || "";
 function presharedClientAuth(app) {
   if (!sharedSecret)
     return console.warn(`No shared secret, ${getPath("client")} is insecure`);
-  app.use(getPath("client"), (req, res, next) => {
+  app.use(getPath("api/client"), (req, res, next) => {
+    console.log("checking auth for", req.path);
     if (req.header("authorization") !== sharedSecret) {
+      console.log("unauthorized");
       res.sendStatus(401);
     } else {
+      console.log("header matched");
       next();
     }
   });
@@ -113,14 +123,19 @@ const options =
     ? {
         enableLegacyRoutes: false,
         adminAuthentication: "custom",
-        baseUriPath,
-        preRouterHook: prestartAll(googleAdminAuth, presharedClientAuth),
+        preRouterHook: prestartAll(
+          logger,
+          googleAdminAuth,
+          presharedClientAuth
+        ),
       }
     : {};
 
 unleash.start(options).then((instance) => {
   console.log(
-    `Unleash started on http://localhost:${instance.app.get("port")}`
+    `Unleash started on http://localhost:${instance.app.get(
+      "port"
+    )}${baseUriPath}`
   );
 });
 
