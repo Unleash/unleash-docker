@@ -1,5 +1,4 @@
 "use strict";
-const { join } = require("path");
 const unleash = require("unleash-server");
 const passport = require("passport");
 const GoogleOAuth2Strategy = require("passport-google-oauth20").Strategy;
@@ -9,11 +8,7 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
 const GOOGLE_CALLBACK_URL = process.env.GOOGLE_CALLBACK_URL || "";
 const allowedUsers = new RegExp(process.env.ALLOWED_USERS_REGEX);
 const enableGoogleLogin = !!GOOGLE_CLIENT_ID;
-const baseUriPath = process.env.BASE_URI_PATH || "/";
-const getPath = (s) => {
-  console.log("route: ", "/" + join(baseUriPath, s));
-  return "/" + join(baseUriPath, s);
-};
+
 if (enableGoogleLogin) {
   passport.use(
     new GoogleOAuth2Strategy(
@@ -44,24 +39,24 @@ function googleAdminAuth(app) {
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((user, done) => done(null, user));
   app.get(
-    getPath("admin/login"),
+    "/api/admin/login",
     passport.authenticate("google", { scope: ["email"] })
   );
 
   app.get(
-    getPath("auth/callback"),
+    "/api/auth/callback",
     passport.authenticate("google", {
-      successRedirect: getPath("/"),
-      failureRedirect: getPath("admin/error-login"),
+      successRedirect: "/",
+      failureRedirect: "/api/admin/error-login",
     })
   );
 
-  app.get(getPath("admin/error-login"), (req, res) => {
+  app.get("/api/admin/error-login", (req, res) => {
     return res
       .status("401")
       .json(
         new unleash.AuthenticationRequired({
-          path: getPath("admin/login"),
+          path: "/api/admin/login",
           type: "custom",
           message: `There was an error authenticating.`,
         })
@@ -69,7 +64,7 @@ function googleAdminAuth(app) {
       .end();
   });
 
-  app.use(getPath("admin/"), (req, res, next) => {
+  app.use("/api/admin/", (req, res, next) => {
     let emailNotAllowedError = "";
     let showInvalidEmailError = !!(req.user && req.user.email);
     if (req.user && req.user.email && req.user.email.match(allowedUsers)) {
@@ -83,7 +78,7 @@ function googleAdminAuth(app) {
       .status("401")
       .json(
         new unleash.AuthenticationRequired({
-          path: getPath("admin/login"),
+          path: "/api/admin/login",
           type: "custom",
           message: showInvalidEmailError
             ? emailNotAllowedError
@@ -98,8 +93,8 @@ function googleAdminAuth(app) {
 const sharedSecret = process.env.SHARED_SECRET || "";
 function presharedClientAuth(app) {
   if (!sharedSecret)
-    return console.warn(`No shared secret, ${getPath("client")} is insecure`);
-  app.use(getPath("client"), (req, res, next) => {
+    return console.warn("No shared secret, /api/client is insecure");
+  app.use("/api/client", (req, res, next) => {
     if (req.header("authorization") !== sharedSecret) {
       res.sendStatus(401);
     } else {
@@ -113,7 +108,6 @@ const options =
     ? {
         enableLegacyRoutes: false,
         adminAuthentication: "custom",
-        baseUriPath,
         preRouterHook: prestartAll(googleAdminAuth, presharedClientAuth),
       }
     : {};
