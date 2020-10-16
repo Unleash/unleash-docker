@@ -4,6 +4,7 @@
 
 def dockerImage
 def imageName = 'unleash-server'
+def version
 
 pipeline {
     agent {
@@ -21,7 +22,9 @@ pipeline {
         stage('Build image') {
             steps {
                 script {
-                    dockerImage = docker.build("registry.glintpay.com/${imageName}:${params.VERSION}")
+                    version = sh(returnStdout: true,
+                        script: """jq -r '.dependencies."${imageName}".version' package-lock.json""")
+                    dockerImage = docker.build("registry.glintpay.com/${imageName}:${version}")
                 }
             }
         }
@@ -40,7 +43,7 @@ pipeline {
     post {
         success {
             script {
-                currentBuild.description = "${imageName}: <b>${params.VERSION}</b>"
+                currentBuild.description = "${imageName}: <b>${version}</b>"
             }
         }
     }
