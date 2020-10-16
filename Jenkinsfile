@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     version = sh(returnStdout: true,
-                        script: """jq -r '.dependencies."${imageName}".version' package-lock.json""")
+                        script: """jq -r '.dependencies."${imageName}".version' package-lock.json""").trim()
                     dockerImage = docker.build("registry.glintpay.com/${imageName}:${version}")
                 }
             }
