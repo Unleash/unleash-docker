@@ -9,7 +9,7 @@ def version
 pipeline {
     agent {
         node {
-            label agentNodeLabel(3)
+            label agentNodeLabel(5)
         }
     }
 
