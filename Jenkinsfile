@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-@Library('shared-libs@1.15') _
+@Library('shared-libs@1.31') _
 
 def dockerImage
 def imageName = 'unleash-server'
@@ -9,7 +9,7 @@ def version
 pipeline {
     agent {
         node {
-            label agentNodeLabel(8)
+            label agentNodeLabel(3)
         }
     }
 
