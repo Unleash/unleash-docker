@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "test:ci": "echo 'no tests for unleash-docker';"
+    "test:ci": "echo 'no tests for unleash-docker';",
+    "docker:build": "./tools/release build.js",
+    "docker:build-default": "./tools/release.js build --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine",
+    "docker:publish": "./tools/release publish.js",
+    "docker:publish-default": "./tools/release.js publish --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine"
   },
   "engines": {
     "node": ">=12"
@@ -18,5 +22,10 @@
     "basic-auth": "^2.0.1",
     "passport": "^0.4.1",
     "unleash-server": "^3.10.1"
+  },
+  "devDependencies": {
+    "execa": "^5.0.0",
+    "tempy": "^1.0.0",
+    "yargs": "^16.2.0"
   }
 }
