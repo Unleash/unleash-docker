@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const tempy = require('tempy');
 const execa = require('execa');
-const { getUnleashServerVersion } = require('./unleash-server-utils');
 
 const tempDirPath = tempy.directory();
 
@@ -114,7 +113,8 @@ async function buildDockerImages({
   nodeDockerVersions,
   defaultNodeDockerVersion,
 }) {
-  const unleashServerVersion = await getUnleashServerVersion();
+  /** @type string */
+  const unleashServerVersion = require('unleash-server/package.json').version;
 
   /** @type {{tag: string, nodeDockerVersion: string}[]} */
   const artifacts = [];
