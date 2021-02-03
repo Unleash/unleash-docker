@@ -64,7 +64,7 @@ async function main() {
 
         readline.setPrompt('\nDo you want to push these tags? (y/N) ');
         readline.prompt();
-        readline.once('line', async input => {
+        readline.once('line', async (input) => {
           switch (input) {
             case 'n':
             case '':
@@ -80,7 +80,7 @@ async function main() {
               readline.prompt();
           }
 
-          console.log('Bye!')
+          console.log('Bye!');
           process.exit(0);
         });
       },

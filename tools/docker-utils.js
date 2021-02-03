@@ -21,8 +21,11 @@ const fromLineRegExp = /FROM node:.*?\n/g;
  * @param nodeDockerVersion {string}
  * @returns {string} the Dockerfile content with the correct base image
  */
-function renderDockerfile({nodeDockerVersion}) {
-  return dockerfileTemplate.replace(fromLineRegExp, `FROM node:${nodeDockerVersion}`);
+function renderDockerfile({ nodeDockerVersion }) {
+  return dockerfileTemplate.replace(
+    fromLineRegExp,
+    `FROM node:${nodeDockerVersion}`,
+  );
 }
 
 const unleashImageName = `unleashorg/unleash-server`;
