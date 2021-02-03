@@ -9,8 +9,8 @@ const tempDirPath = tempy.directory();
 
 /** @type {string} */
 const dockerfileTemplate = fs.readFileSync(
-  path.resolve(__dirname, '..', 'Dockerfile'),
-  { encoding: 'utf8' },
+  path.resolve(__dirname, '../Dockerfile'),
+  'utf8',
 );
 
 const fromLineRegExp = /FROM node:.*?\n/g;
