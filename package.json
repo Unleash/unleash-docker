@@ -5,9 +5,9 @@
   "scripts": {
     "start": "NODE_ENV=production node index.js",
     "test:ci": "echo 'no tests for unleash-docker';",
-    "docker:build": "./tools/release build.js",
+    "docker:build": "./tools/release.js build",
     "docker:build-default": "./tools/release.js build --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine",
-    "docker:publish": "./tools/release publish.js",
+    "docker:publish": "./tools/release.js publish",
     "docker:publish-default": "./tools/release.js publish --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine"
   },
   "engines": {
