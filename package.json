@@ -21,7 +21,7 @@
     "@passport-next/passport-google-oauth2": "^1.0.0",
     "basic-auth": "^2.0.1",
     "passport": "^0.4.1",
-    "unleash-server": "^3.10.1"
+    "unleash-server": "^3.11.0"
   },
   "devDependencies": {
     "execa": "^5.0.0",
