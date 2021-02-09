@@ -38,8 +38,13 @@ const unleashImageName = `unleashorg/unleash-server`;
  * @param nodeDockerVersion {string} the Node Docker image tag version to base this image on
  * @returns {Promise<{dockerfilePath: string, unleashDockerTag: string}>}
  */
-async function createDockerfile({ unleashServerVersion, nodeDockerVersion }) {
-  const unleashDockerTagVersion = `${unleashServerVersion}-node${nodeDockerVersion}`;
+async function createDockerfile({ unleashServerVersion, nodeDockerVersion , latest}) {
+  let unleashDockerTagVersion;
+  if (!latest) {
+    unleashDockerTagVersion = `${unleashServerVersion}-node${nodeDockerVersion}`;
+  } else {
+    unleashDockerTagVersion = `latest-node${nodeDockerVersion}`
+  }
   const unleashDockerTag = `unleashorg/unleash-server:${unleashDockerTagVersion}`;
 
   const dockerfilePath = path.join(
@@ -69,12 +74,14 @@ async function buildDockerImage({
   nodeDockerVersion,
   unleashServerVersion,
   isDefaultNodeVersion,
+  latest,
 }) {
   console.log(`\nBuilding Docker image based on node:${nodeDockerVersion}`);
 
   const { dockerfilePath, unleashDockerTag } = await createDockerfile({
     unleashServerVersion,
     nodeDockerVersion,
+    latest,
   });
 
   const contextDirectory = path.resolve(__dirname, '..');
@@ -88,10 +95,13 @@ async function buildDockerImage({
   const additionalUnleashDockerTags = [];
 
   if (isDefaultNodeVersion) {
-    additionalUnleashDockerTags.push(
-      `${unleashImageName}:${unleashServerVersion}`,
-    );
-    additionalUnleashDockerTags.push(`${unleashImageName}:latest`);
+    if (latest) {
+      additionalUnleashDockerTags.push(`${unleashImageName}:latest`);
+    } else {
+      additionalUnleashDockerTags.push(
+          `${unleashImageName}:${unleashServerVersion}`,
+      );
+    }
   }
 
   for (const tag of additionalUnleashDockerTags) {
@@ -114,7 +124,7 @@ async function buildDockerImage({
  */
 async function buildDockerImages({
   nodeDockerVersions,
-  defaultNodeDockerVersion,
+  defaultNodeDockerVersion, latest
 }) {
   /** @type string */
   const unleashServerVersion = require('unleash-server/package.json').version;
@@ -122,17 +132,19 @@ async function buildDockerImages({
   /** @type {{tag: string, nodeDockerVersion: string}[]} */
   const artifacts = [];
 
-  for (const nodeDockerVersion of nodeDockerVersions) {
-    const buildResult = await buildDockerImage({
-      nodeDockerVersion,
-      unleashServerVersion,
-      isDefaultNodeVersion: nodeDockerVersion === defaultNodeDockerVersion,
-    });
+    for (const nodeDockerVersion of nodeDockerVersions) {
+      const buildResult = await buildDockerImage({
+        nodeDockerVersion,
+        unleashServerVersion,
+        isDefaultNodeVersion: nodeDockerVersion === defaultNodeDockerVersion,
+        latest
+      });
 
-    for (const tag of buildResult.unleashDockerTags) {
-      artifacts.push({ tag, nodeDockerVersion });
-    }
+      for (const tag of buildResult.unleashDockerTags) {
+        artifacts.push({ tag, nodeDockerVersion });
+      }
   }
+
 
   return artifacts;
 }

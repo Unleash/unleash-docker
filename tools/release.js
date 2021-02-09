@@ -11,12 +11,16 @@ const { buildDockerImages, pushDockerImage } = require('./docker-utils');
 
 async function main() {
   const argv = yargs(hideBin(process.argv))
-    .option('defaultNodeDockerVersion', {
-      alias: 'default-node-docker-version',
-      describe: 'Node Docker version for latest tag',
-      demandOption: true,
-    })
-    .option('nodeDockerVersions', {
+      .option('latest', {
+        describe:
+            'Whether to tag with latest or with version from package.json',
+        default: false,
+        type: 'boolean'
+      }).option('defaultNodeDockerVersion', {
+        alias: 'default-node-docker-version',
+        describe: 'Node Docker version for latest tag',
+        demandOption: true,
+    }).option('nodeDockerVersions', {
       alias: 'node-docker-versions',
       describe:
         'Comma-separated list of Node Docker tag versions (e.g., "12-alpine,14-alpine")',
@@ -34,6 +38,7 @@ async function main() {
         `defaultNodeDockerVersion "${defaultNodeDockerVersion}" was not in list of versions "${nodeDockerVersions}"`,
       );
     })
+
     .command({
       command: 'build',
       desc: 'Build Docker image(s) based on Node version(s)',

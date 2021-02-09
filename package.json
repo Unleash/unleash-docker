@@ -7,8 +7,10 @@
     "test:ci": "echo 'no tests for unleash-docker';",
     "docker:build": "./tools/release.js build",
     "docker:build-default": "./tools/release.js build --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine",
+    "docker:build-latest": "./tools/release.js build --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine --latest",
     "docker:publish": "./tools/release.js publish",
-    "docker:publish-default": "./tools/release.js publish --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine"
+    "docker:publish-default": "./tools/release.js publish --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine",
+    "docker:publish-latest": "./tools/release.js publish --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine --latest"
   },
   "engines": {
     "node": ">=12"
