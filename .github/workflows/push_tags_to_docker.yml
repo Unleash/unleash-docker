@@ -23,4 +23,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Publish tag
-        run: yes | npm run docker:release-default
+        run: yes | npm run docker:publish-default
