@@ -13,7 +13,7 @@ const dockerfileTemplate = fs.readFileSync(
   'utf8',
 );
 
-const fromLineRegExp = /FROM node:.*?\n/g;
+const fromStatementRegExp = /FROM node:.*?(\s|\n)/g;
 
 /**
  * Render a Dockerfile with the correct base image.
@@ -23,8 +23,12 @@ const fromLineRegExp = /FROM node:.*?\n/g;
  */
 function renderDockerfile({ nodeDockerVersion }) {
   return dockerfileTemplate.replace(
-    fromLineRegExp,
-    `FROM node:${nodeDockerVersion}`,
+    fromStatementRegExp,
+      // We need a trailing space for the first step(s) in the multi-stage build
+      // (between "FROM node:<version>" and e.g., "as builder").
+      // This also adds a trailing space to the end of the final
+      // FROM statement, but it doesn't make a difference.
+      `FROM node:${nodeDockerVersion} `
   );
 }
 
