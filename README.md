@@ -1,13 +1,40 @@
 ## Use this image
 
-We have published this image on docker-hub. 
 
-```bash
-docker pull unleashorg/unleash-server
-docker run -d -e DATABASE_URL=postgres://user:pass@10.200.221.11:5432/unleash unleashorg/unleash-server
+**Useful links:**
+
+- [Docker image on dockerhub](https://hub.docker.com/r/unleashorg/unleash-server/)
+- [Unleash Helm Chart on artifacthub](https://artifacthub.io/packages/helm/unleash/unleash)
+
+**Steps:**
+
+1. Create a network by running `docker network create unleash`
+2. Start a postgres database:
+
+```sh
+docker run -e POSTGRES_PASSWORD=some_password \
+  -e POSTGRES_USER=unleash_user -e POSTGRES_DB=unleash \
+  --network unleash --name postgres postgres
 ```
 
-Specifying secrets as environment variables are considered a bad security practice. Therefore, you can instead specify a file where unleash can read the database secret. This is done via the `DATABASE_URL_FILE` environment variable.
+3. Start Unleash via docker:
+
+```sh
+docker run -p 4242:4242 \
+  -e DATABASE_HOST=postgres -e DATABASE_NAME=unleash \
+  -e DATABASE_USERNAME=unleash_user -e DATABASE_PASSWORD=some_password \
+  --network unleash unleashorg/unleash-server
+```
+
+All configuration options [available in our documentation](https://docs.getunleash.io/docs/deploy/configuring_unleash). 
+
+
+#### Docker-compose
+
+1. Clone the [unleash-docker](https://github.com/Unleash/unleash-docker) repository.
+2. Run `docker-compose build` in repository root folder.
+3. Run `docker-compose up` in repository root folder.
+
 
 
 ## Work locally with this repo 
@@ -49,4 +76,4 @@ git tag -a 3.7 -m "Update 3.7 tag"
 git push origin master --follow-tags
 ```
 
-This will automatically trigger docker-hub to build the new tag. 
+This will automatically trigger a github actions which will build the new tag and push it to docker-hub. 
