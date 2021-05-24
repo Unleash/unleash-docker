@@ -23,7 +23,7 @@ docker run -e POSTGRES_PASSWORD=some_password \
 docker run -p 4242:4242 \
   -e DATABASE_HOST=postgres -e DATABASE_NAME=unleash \
   -e DATABASE_USERNAME=unleash_user -e DATABASE_PASSWORD=some_password \
-  -e DATABASE_SSL=false
+  -e DATABASE_SSL=false \
   --network unleash unleashorg/unleash-server
 ```
 
