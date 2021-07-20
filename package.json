@@ -13,7 +13,7 @@
     "docker:publish-latest": "./tools/release.js publish --node-docker-versions 12-alpine,14-alpine --default-node-docker-version 12-alpine --latest"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +23,7 @@
     "@passport-next/passport-google-oauth2": "^1.0.0",
     "basic-auth": "^2.0.1",
     "passport": "^0.4.1",
-    "unleash-server": "^4.0.5"
+    "unleash-server": "^4.0.6"
   },
   "devDependencies": {
     "execa": "^5.0.0",
