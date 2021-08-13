@@ -14,4 +14,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build containers
-        uses: docker-compose build
+        run: docker-compose build
