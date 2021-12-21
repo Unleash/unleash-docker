@@ -4,10 +4,16 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "test:ci": "echo 'no tests for unleash-docker';"
+    "test:ci": "echo 'no tests for unleash-docker';",
+    "docker:build": "./tools/release.js build",
+    "docker:build-default": "./tools/release.js build --node-docker-versions 14-alpine,16-alpine --default-node-docker-version 14-alpine",
+    "docker:build-latest": "./tools/release.js build --node-docker-versions 14-alpine,16-alpine --default-node-docker-version 14-alpine --latest",
+    "docker:publish": "./tools/release.js publish",
+    "docker:publish-default": "./tools/release.js publish --node-docker-versions 14-alpine,16-alpine --default-node-docker-version 14-alpine",
+    "docker:publish-latest": "./tools/release.js publish --node-docker-versions 14-alpine,16-alpine --default-node-docker-version 14-alpine --latest"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +22,12 @@
     "@passport-next/passport": "^3.1.0",
     "@passport-next/passport-google-oauth2": "^1.0.0",
     "basic-auth": "^2.0.1",
-    "passport": "^0.4.1",
-    "unleash-server": "^3.6.0"
+    "passport": "^0.5.2",
+    "unleash-server": "4.4.4"
+  },
+  "devDependencies": {
+    "execa": "^5.1.1",
+    "tempy": "^1.0.0",
+    "yargs": "^17.2.1"
   }
 }

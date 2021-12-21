@@ -1,11 +1,21 @@
-FROM node:12-alpine
+FROM node:14-alpine as builder
 
-COPY package.json package-lock.json ./
+WORKDIR /unleash
+
+COPY index.js package.json package-lock.json ./
 
 RUN npm ci
 
-COPY . .
+FROM node:14-alpine
+
+ENV NODE_ENV production
+
+WORKDIR /unleash
+
+COPY --from=builder /unleash /unleash
 
 EXPOSE 80
+
+USER node
 
 CMD node index.js
