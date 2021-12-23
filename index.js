@@ -2,8 +2,20 @@
 
 const unleash = require('unleash-server');
 
-let options = {};
+function logger(name) {
+  return {
+    warn: console.log,
+    error: console.error,
+  };
+}
 
-options.port = 80
+
+let options = {
+    getLogger: logger,
+    server: {
+        port: 80,
+    }
+};
+
 
 unleash.start(options);
