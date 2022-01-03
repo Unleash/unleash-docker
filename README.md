@@ -65,7 +65,7 @@ When we upgrade the `unleash-version` this project should be tagged with the sam
 
 ```bash
 git tag -a 3.7.0 -m "upgrade to unleash-server 3.7.0"
-git push origin master --follow-tags
+git push origin main --follow-tags
 ```
 
 You might also want to update the minor tag:
@@ -74,7 +74,7 @@ You might also want to update the minor tag:
 git tag -d 3.7
 git push origin :3.7
 git tag -a 3.7 -m "Update 3.7 tag"
-git push origin master --follow-tags
+git push origin main --follow-tags
 ```
 
 This will automatically trigger a github actions which will build the new tag and push it to docker-hub. 
