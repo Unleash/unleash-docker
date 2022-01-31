@@ -14,6 +14,8 @@ WORKDIR /unleash
 
 COPY --from=builder /unleash /unleash
 
+RUN rm -rf /usr/local/lib/node_modules/npm/
+
 EXPOSE 4242
 
 USER node
