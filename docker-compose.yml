@@ -9,7 +9,7 @@ services:
       DATABASE_SSL: "false"
     depends_on:
       - db
-    command: npm run start
+    command: node index.js
     healthcheck:
       test: ["CMD", "nc",  "-z", "db", "5432"]
       interval: 1s
