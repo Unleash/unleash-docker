@@ -2142,10 +2142,10 @@ unleash-frontend@4.8.0:
   resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.8.0.tgz#c35961a740407fc0f4ab4ba24ea61f6bab02183b"
   integrity sha512-GFT16muJ5ff9Xuz12OtZfsVC8ClTqEpoAP5tT0txNkUTauUSL1hTrvQsTeSJlY5THI7nKLrSBOGsKo0ysyiCXQ==
 
-unleash-server@4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.8.0.tgz#c3f2717a9ad9302733dc515a4fcae8ba0b50301e"
-  integrity sha512-xBj1f9MqNwKRke65ea7I44vk3KqZQx+5jWvwoW4Lfv3j3oSSAa/8aAJ8OOChrfu+b2jd/whNnY7PLgJ4RTwKlQ==
+unleash-server@4.8.1:
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.8.1.tgz#91978dbae6bf284e5009cab9a3f8486e9b377e18"
+  integrity sha512-CC/K+uCpP0CODtaG+SfUaBYH8iaibOqDLnJ7fok05c23738AykVauinBUIDR0VYDBHhmgXSoD/iUbE4Ct4CU0w==
   dependencies:
     async "^3.1.1"
     bcryptjs "^2.4.3"
