@@ -1137,10 +1137,10 @@ kind-of@^6.0.3:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-knex@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/knex/-/knex-1.0.3.tgz#a5f97aa98e5e036cfd0209a90d53b2a411280e84"
-  integrity sha512-rY1T7cgTQGHAUD9TshMka37bd+SEK+koPXXvZQEIoE8yjJ/E8ShsenaAmr3oaNNzqXuKD/SC0qlYtp7Js8tAXA==
+knex@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/knex/-/knex-1.0.1.tgz#0916dc2b79375cd15bfbf0d70bf3c5ef5f411a33"
+  integrity sha512-pusgMo74lEbUxmri+YfWV8x/LJacP/2KcemTCKH7WnXFYz5RoMi+8WM4OJ05b0glfF+aWB4nkFsxsXxJ8qioLQ==
   dependencies:
     colorette "2.0.16"
     commander "^8.3.0"
@@ -1582,7 +1582,7 @@ pg-types@^2.1.0:
     postgres-date "~1.0.4"
     postgres-interval "^1.1.0"
 
-pg@^8.0.3, pg@^8.7.3:
+pg@^8.0.3, pg@^8.7.1:
   version "8.7.3"
   resolved "https://registry.yarnpkg.com/pg/-/pg-8.7.3.tgz#8a5bdd664ca4fda4db7997ec634c6e5455b27c44"
   integrity sha512-HPmH4GH4H3AOprDJOazoIcpI49XFsHCe8xlrjHkWiapdbHK+HLtbm/GQzXYAZwmPju/kzKhjaSfMACG+8cgJcw==
@@ -2137,15 +2137,15 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
-unleash-frontend@4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.8.0.tgz#c35961a740407fc0f4ab4ba24ea61f6bab02183b"
-  integrity sha512-GFT16muJ5ff9Xuz12OtZfsVC8ClTqEpoAP5tT0txNkUTauUSL1hTrvQsTeSJlY5THI7nKLrSBOGsKo0ysyiCXQ==
+unleash-frontend@4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.6.4.tgz#20c5efbbecdf4f2dfcafa37e3c42e20795f6ee55"
+  integrity sha512-RWxWfhq3eF/tdE/+D1ESCwWP2wW9IRbtMVtpCujbYkY3E45Iev6SJHDZ3HCQlqA5RwnWINSl3rYXP18mnnC9Aw==
 
-unleash-server@4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.8.2.tgz#b2f8c5fab7ac3a13a5c47984329d21498ef70d8e"
-  integrity sha512-sVx9QEXUztDhQMjOp4StOtOP7RlAQzKXWr0oqmyZmxMRYBJhfKqtNgG8TrEXkoBLyOGuih0tJty5p+2V5B+qew==
+unleash-server@4.6.6:
+  version "4.6.6"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.6.6.tgz#e1b41a82c8d3b0af5a7f4aa65dd9ad012cb4c52b"
+  integrity sha512-5LMIss1368AGHv/EXzHyCoXI6NMtQRhK5NllU6powkhNh/IbOLKwHj20juxzdBE47JYpt4liuZQyI+8QmV44Vg==
   dependencies:
     async "^3.1.1"
     bcryptjs "^2.4.3"
@@ -2167,7 +2167,7 @@ unleash-server@4.8.2:
     helmet "^5.0.0"
     joi "^17.3.0"
     js-yaml "^4.1.0"
-    knex "1.0.3"
+    knex "1.0.1"
     log4js "^6.0.0"
     memoizee "^0.4.15"
     mime "^2.4.2"
@@ -2177,7 +2177,7 @@ unleash-server@4.8.2:
     nodemailer "^6.5.0"
     owasp-password-strength-test "^1.3.0"
     parse-database-url "^0.3.0"
-    pg "^8.7.3"
+    pg "^8.7.1"
     pg-connection-string "^2.5.0"
     pkginfo "^0.4.1"
     prom-client "^14.0.0"
@@ -2185,7 +2185,7 @@ unleash-server@4.8.2:
     serve-favicon "^2.5.0"
     stoppable "^1.1.0"
     type-is "^1.6.18"
-    unleash-frontend "4.8.0"
+    unleash-frontend "4.6.4"
     uuid "^8.3.2"
 
 unpipe@1.0.0, unpipe@~1.0.0:
