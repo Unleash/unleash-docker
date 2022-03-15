@@ -52,7 +52,7 @@ $ docker-compose up
 ### Requirements
 We are using docker-compose version 3.9 and it requires:
 
-- Docker engine  19.03.0++
+- Docker engine 19.03.0+
 - Docker compose 2.0.0+
 
 For more info, check out the compatibility matrix on Docker's website: [compatibility-matrix](
