@@ -1,12 +1,13 @@
-FROM node:14-alpine as builder
+ARG NODE_VERSION
+FROM node:$NODE_VERSION as builder
 
 WORKDIR /unleash
 
-COPY index.js package.json package-lock.json ./
+COPY index.js package.json yarn.lock ./
 
-RUN npm ci
+RUN yarn install --frozen-lockfile --production=true
 
-FROM node:14-alpine
+FROM node:$NODE_VERSION
 
 ENV NODE_ENV production
 

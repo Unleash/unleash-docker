@@ -50,15 +50,16 @@ $ docker-compose up
 ```
 
 ### Requirements
-We are using docker-compose version 3.4 and it requires:
+We are using docker-compose version 3.9 and it requires:
 
-- Docker engine 17.09.0+
-- Docker compose 1.17.0+
+- Docker engine 19.03.0+
+- Docker compose 2.0.0+
 
 For more info, check out the compatibility matrix on Docker's website: [compatibility-matrix](
 https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-matrix)
 
-
+### Building the docker image
+We expect a build-arg for which node-version to build with so if you're building using the docker cli, you have to use `--build-arg NODE_VERSION=14-alpine` OR `--build-arg NODE_VERSION=16-alpine`
 
 ## Upgrade version
 When we upgrade the `unleash-version` this project should be tagged with the same version number.
