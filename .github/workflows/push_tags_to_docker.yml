@@ -3,8 +3,7 @@ name: Push Tags
 on:
   push:
     tags:
-      - '\d+\.\d+\.\d+'
-      - '\d+\.\d+'
+      - '*'
 
 jobs:
   build:
