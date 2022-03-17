@@ -29,6 +29,12 @@ docker run -p 4242:4242 \
 
 All configuration options [available in our documentation](https://docs.getunleash.io/docs/deploy/configuring_unleash). 
 
+### User accounts
+- Once started up, you'll have a user with 
+  - `username: admin`
+  - `password: unleash4all`
+
+This user is an admin user and can be used to create other users, we do suggest you change the password :)
 
 #### Docker-compose
 
