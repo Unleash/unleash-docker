@@ -14,7 +14,11 @@
 
 version: "3.9"
 services:
-  # the Unleash proxy is used for front end clients that
+  # the Unleash proxy is used for front-end clients, such as the
+  # JavaScript Proxy Client SDK and the React SDK.
+  #
+  # For security reasons, front-end clients shouldn't (and can't) talk
+  # directly to the Unleash server.
   proxy:
     image: unleashorg/unleash-proxy:v0.8.1
     ports:
