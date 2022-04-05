@@ -1,5 +1,15 @@
 version: "3.9"
 services:
+  proxy:
+    image: unleashorg/unleash-proxy:v0.8.1
+    ports:
+      - "3000:3000"
+    environment:
+      UNLEASH_PROXY_SECRETS: "proxy-client-key"
+      UNLEASH_URL: "http://web:4242/api"
+      UNLEASH_API_TOKEN: "default:default.unleash-insecure-api-token"
+    depends_on:
+      - web
   web:
     build:
       context: .
@@ -10,6 +20,7 @@ services:
     environment:
       DATABASE_URL: "postgres://postgres:unleash@db/postgres"
       DATABASE_SSL: "false"
+      INIT_CLIENT_API_TOKENS:  "default:default.unleash-insecure-api-token"
     depends_on:
       - db
     command: node index.js
