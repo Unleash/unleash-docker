@@ -29,7 +29,6 @@ jobs:
           images: |
             unleashorg/unleash-server
           tags:
-            type=sha
             type=edge,suffix=-${{ matrix.version }}
       - name: Build tag and push image to Docker hub
         uses: docker/build-push-action@v2
