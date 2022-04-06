@@ -27,6 +27,7 @@ jobs:
           tags:
             type=semver,pattern={{ version }},suffix=-${{ matrix.version }}
             type=semver,pattern={{ major.minor }},suffix=-${{ matrix.version }}
+            type=sha
       - name: Login to docker hub
         uses: docker/login-action@v1
         with:
