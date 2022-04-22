@@ -71,16 +71,7 @@ We expect a build-arg for which node-version to build with so if you're building
 When we upgrade the `unleash-version` this project should be tagged with the same version number.
 
 ```bash
-git tag -a 3.7.0 -m "upgrade to unleash-server 3.7.0"
-git push origin main --follow-tags
-```
-
-You might also want to update the minor tag:
-
-```bash
-git tag -d 3.7
-git push origin :3.7
-git tag -a 3.7 -m "Update 3.7 tag"
+git tag -a v3.7.0 -m "upgrade to unleash-server v3.7.0"
 git push origin main --follow-tags
 ```
 
