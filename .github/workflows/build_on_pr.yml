@@ -1,4 +1,4 @@
-name: Build and publish latest
+name: Build docker (PR)
 on:
   push:
     branches:
