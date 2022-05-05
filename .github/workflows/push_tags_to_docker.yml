@@ -21,7 +21,7 @@ jobs:
         with:
           images: |
             unleashorg/unleash-server
-          tags:
+          tags: |
             type=semver,pattern={{ version }}
             type=semver,pattern={{ major.minor }}
             type=semver,pattern={{major}}
