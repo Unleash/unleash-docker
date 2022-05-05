@@ -1,5 +1,45 @@
+# This docker compose setup configures:
+# - the Unleash server instance + the necessary backing Postgres database
+# - the Unleash proxy
+#
+# To learn more about all the parts of Unleash, visit
+# https://docs.getunleash.io
+#
+# NOTE: please do not use this configuration for production setups.
+# Unleash does not take responsibility for any data leaks or other
+# problems that may arise as a result.
+#
+# This is intended to be used for demo, development, and learning
+# purposes only.
+
 version: "3.9"
 services:
+  # the Unleash proxy is used for front-end clients, such as the
+  # JavaScript Proxy Client SDK and the React SDK.
+  #
+  # For security reasons, front-end clients shouldn't (and can't) talk
+  # directly to the Unleash server.
+  proxy:
+    image: unleashorg/unleash-proxy:v0.8.1
+    ports:
+      - "3000:3000"
+    environment:
+      # Proxy clients must use one of these keys to connect to the
+      # Proxy. To add more keys, separate them with a comma (`key1,key2`).
+      UNLEASH_PROXY_CLIENT_KEYS: "proxy-client-key"
+      # This points the Proxy to the Unleash server API
+      UNLEASH_URL: "http://web:4242/api"
+      # This is the API token that the Proxy uses to communicate with
+      # the Unleash server.
+      #
+      # NOTE: It *must* match one of the client tokens defined in
+      # `web.environment.INIT_CLIENT_API_TOKENS`
+      UNLEASH_API_TOKEN: "default:development.unleash-insecure-api-token"
+    depends_on:
+      - web
+
+  # The Unleash server contains the Unleash configuration and
+  # communicates with server-side SDKs and the Unleash Proxy
   web:
     build:
       context: .
@@ -8,8 +48,19 @@ services:
     ports:
       - "4242:4242"
     environment:
+      # This points Unleash to its backing database (defined in the `db` section below)
       DATABASE_URL: "postgres://postgres:unleash@db/postgres"
+      # Disable SSL for database connections. @chriswk: why do we do this?
       DATABASE_SSL: "false"
+      # Initialize Unleash with a default set of client API tokens. To
+      # initialize Unleash with multiple tokens, separate them with a
+      # comma (`token1,token2`).
+      #
+      # These tokens can be used by the Proxy or by *server-side* client
+      # SDKs. For front-end client SDKs that talk to the Proxy, use a
+      # key from `proxy.environment.UNLEASH_PROXY_CLIENT_KEYS`
+      # instead.
+      INIT_CLIENT_API_TOKENS: "default:development.unleash-insecure-api-token"
     depends_on:
       - db
     command: node index.js
@@ -24,7 +75,9 @@ services:
       - "5432"
     image: postgres:14
     environment:
+      # create a database called `db`
       POSTGRES_DB: "db"
+      # trust incoming connections blindly (DON'T DO THIS IN PRODUCTION!)
       POSTGRES_HOST_AUTH_METHOD: "trust"
     healthcheck:
       test: ["CMD", "pg_isready", "--username=postgres", "--host=127.0.0.1", "--port=5432"]

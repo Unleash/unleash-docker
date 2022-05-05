@@ -17,7 +17,7 @@
     "@passport-next/passport-google-oauth2": "^1.0.0",
     "basic-auth": "^2.0.1",
     "passport": "^0.5.2",
-    "unleash-server": "4.9.1"
+    "unleash-server": "4.10.0"
   },
   "devDependencies": {
     "execa": "^5.1.1",
@@ -30,14 +30,12 @@
     "knex/liftoff/findup-sync/micromatc/kind-of": "^6.0.3",
     "knex/liftoff/findup-sync/micromatc/nanomatch/kind-of": "^6.0.3",
     "knex/liftoff/findup-sync/micromatch/define-property/**/kind-of": "^6.0.3",
-    "node-forge": "^0.10.0",
     "set-value": "^4.0.1",
     "ansi-regex": "^5.0.1",
     "ssh2": "^1.4.0",
     "json-schema": "^0.4.0"
   },
   "overrides": {
-    "node-forge": "^0.10.0",
     "set-value": "^4.0.1",
     "ansi-regex": "^5.0.1",
     "ssh2": "^1.4.0",
