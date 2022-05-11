@@ -25,6 +25,7 @@
     "yargs": "^17.2.1"
   },
   "resolutions": {
+    "async": "^3.2.3",
     "db-migrate/rc/minimist": "^1.2.5",
     "knex/liftoff/object.map/**/kind-of": "^6.0.3",
     "knex/liftoff/findup-sync/micromatc/kind-of": "^6.0.3",
