@@ -490,10 +490,10 @@ commander@^7.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
   integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
 
-commander@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
-  integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
+commander@^9.1.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.2.0.tgz#6e21014b2ed90d8b7c9647230d8b7a94a4a419a9"
+  integrity sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==
 
 compressible@~2.0.16:
   version "2.0.18"
@@ -706,7 +706,7 @@ debug@3.2.7:
   dependencies:
     ms "^2.1.1"
 
-debug@4, debug@^4.1.0, debug@^4.3.3, debug@^4.3.4:
+debug@4, debug@4.3.4, debug@^4.1.0, debug@^4.3.3, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -717,13 +717,6 @@ debug@4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
-  dependencies:
-    ms "2.1.2"
-
-debug@4.3.3:
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
-  integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
   dependencies:
     ms "2.1.2"
 
@@ -1103,6 +1096,11 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
+
+get-package-type@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/get-package-type/-/get-package-type-0.1.0.tgz#8de2d803cff44df3bc6c456e6668b36c3926e11a"
+  integrity sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==
 
 get-stream@^6.0.0:
   version "6.0.1"
@@ -1488,25 +1486,6 @@ kind-of@^6.0.3:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-knex@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/knex/-/knex-1.0.4.tgz#b9db3c60d0e3a4af37239bb879244e50eb748124"
-  integrity sha512-cMQ81fpkVmr4ia20BtyrD3oPere/ir/Q6IGLAgcREKOzRVhMsasQ4nx1VQuDRJjqq6oK5kfcxmvWoYkHKrnuMA==
-  dependencies:
-    colorette "2.0.16"
-    commander "^8.3.0"
-    debug "4.3.3"
-    escalade "^3.1.1"
-    esm "^3.2.25"
-    getopts "2.3.0"
-    interpret "^2.2.0"
-    lodash "^4.17.21"
-    pg-connection-string "2.5.0"
-    rechoir "^0.8.0"
-    resolve-from "^5.0.0"
-    tarn "^3.0.2"
-    tildify "2.0.0"
-
 knex@^0.95.6:
   version "0.95.15"
   resolved "https://registry.yarnpkg.com/knex/-/knex-0.95.15.tgz#39d7e7110a6e2ad7de5d673d2dea94143015e0e7"
@@ -1524,6 +1503,26 @@ knex@^0.95.6:
     rechoir "0.7.0"
     resolve-from "^5.0.0"
     tarn "^3.0.1"
+    tildify "2.0.0"
+
+knex@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/knex/-/knex-2.0.0.tgz#84296ced7ef27e0f3b954302ac7d9da67c28b5d3"
+  integrity sha512-LchC8/GLfreMz8d4kCwh/ymXttsoJG8zO1O0AJBjnxdyr2oT/k2ik77hP1PpZkZH9mDQrq6WsQcIu18Pnqppzg==
+  dependencies:
+    colorette "2.0.16"
+    commander "^9.1.0"
+    debug "4.3.4"
+    escalade "^3.1.1"
+    esm "^3.2.25"
+    get-package-type "^0.1.0"
+    getopts "2.3.0"
+    interpret "^2.2.0"
+    lodash "^4.17.21"
+    pg-connection-string "2.5.0"
+    rechoir "^0.8.0"
+    resolve-from "^5.0.0"
+    tarn "^3.0.2"
     tildify "2.0.0"
 
 lazy-cache@^0.2.3:
@@ -2784,17 +2783,15 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
-unleash-frontend@4.10.3:
-  version "4.10.3"
-  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.10.3.tgz#e6c7dceac0754151eee44ebf0c845f6c2009717b"
-  integrity sha512-osCGSv2lG1DBLAIW2K88ZgJfJZi0BQtsyBCq6DBYltdyoZ0ugl6NAWEY2wihgKw38c3okEhAx8vCA7P5NrBtyQ==
-  dependencies:
-    pkginfo "^0.4.1"
+unleash-frontend@4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.11.0.tgz#98fcdee7af6671028e53b96369e28435032087f3"
+  integrity sha512-2ikz2GzFSO2P+UAP/gJOVd5hKDEvojE6qnuhHa5Uf76YhEJ0DqGrpbWcEHfE/kXr9/7INZQFH42ToeECi78QgQ==
 
-unleash-server@4.10.5:
-  version "4.10.5"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.10.5.tgz#8656cf0500f77d0e059e4456aab0a83c96194fb5"
-  integrity sha512-O0A0LItpfU/ZDd8fw0TIaUbFPAlPZO58FrzvwDRvhNn3r++3vJH1qSmT4OV6QABSmFoLT4AXoMlr0RXBkG1ACg==
+unleash-server@4.11.1:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.11.1.tgz#399c597d6c0787934dfecaf9d834a2767e16a5a9"
+  integrity sha512-VlbyA2aLqQrz0R2hhWhKzzq/0u9ER+LzBTDDdDibXzyCKpVD3IHmlylRjMSvrC2x2dFVppSn2KA3xe4mqIOeLg==
   dependencies:
     "@unleash/express-openapi" "^0.2.0"
     async "^3.2.3"
@@ -2818,7 +2815,7 @@ unleash-server@4.10.5:
     joi "^17.3.0"
     js-yaml "^4.1.0"
     json-schema-to-ts "^2.0.0"
-    knex "1.0.4"
+    knex "^2.0.0"
     log4js "^6.0.0"
     make-fetch-happen "^10.1.2"
     memoizee "^0.4.15"
@@ -2838,7 +2835,7 @@ unleash-server@4.10.5:
     serve-favicon "^2.5.0"
     stoppable "^1.1.0"
     type-is "^1.6.18"
-    unleash-frontend "4.10.3"
+    unleash-frontend "4.11.0"
     uuid "^8.3.2"
 
 unpipe@1.0.0, unpipe@~1.0.0:
