@@ -2783,15 +2783,15 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
-unleash-frontend@4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.11.0.tgz#98fcdee7af6671028e53b96369e28435032087f3"
-  integrity sha512-2ikz2GzFSO2P+UAP/gJOVd5hKDEvojE6qnuhHa5Uf76YhEJ0DqGrpbWcEHfE/kXr9/7INZQFH42ToeECi78QgQ==
+unleash-frontend@4.11.2:
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.11.2.tgz#97ddfcb92e474e84fed1f1c929216bb8ec4568e5"
+  integrity sha512-aUev+7OIyhgDRQAyqZ4lMFGcjJ/GyoBRAJ8nWDgIMJuw0L0XnzAgw44sJNj1ejN4N7i+6ErND/sM94Eqpj/e7Q==
 
-unleash-server@4.11.1:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.11.1.tgz#399c597d6c0787934dfecaf9d834a2767e16a5a9"
-  integrity sha512-VlbyA2aLqQrz0R2hhWhKzzq/0u9ER+LzBTDDdDibXzyCKpVD3IHmlylRjMSvrC2x2dFVppSn2KA3xe4mqIOeLg==
+unleash-server@4.11.2:
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.11.2.tgz#11462a6c6e4448cc6455bd6293fb6c3370dbb4fb"
+  integrity sha512-CZmrfpNJXkXiEb+/O1c21Ld8xRdN3Pv81AZUwB18t1atSXpBWRclefalWvcaNO7kuu6eCUiInmn796NKG9OsnQ==
   dependencies:
     "@unleash/express-openapi" "^0.2.0"
     async "^3.2.3"
@@ -2835,7 +2835,7 @@ unleash-server@4.11.1:
     serve-favicon "^2.5.0"
     stoppable "^1.1.0"
     type-is "^1.6.18"
-    unleash-frontend "4.11.0"
+    unleash-frontend "4.11.2"
     uuid "^8.3.2"
 
 unpipe@1.0.0, unpipe@~1.0.0:
