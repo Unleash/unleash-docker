@@ -1820,7 +1820,7 @@ ms@2.1.3, ms@^2.0.0, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-multer@^1.4.1:
+multer@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/multer/-/multer-1.4.4.tgz#e2bc6cac0df57a8832b858d7418ccaa8ebaf7d8c"
   integrity sha512-2wY2+xD4udX612aMqMcB8Ws2Voq6NIUPEtD1be6m411T4uDH/VtL9i//xvcyFlTVfRdaBsk7hV5tgrGQqhuBiw==
@@ -2783,15 +2783,15 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
-unleash-frontend@4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.11.2.tgz#97ddfcb92e474e84fed1f1c929216bb8ec4568e5"
-  integrity sha512-aUev+7OIyhgDRQAyqZ4lMFGcjJ/GyoBRAJ8nWDgIMJuw0L0XnzAgw44sJNj1ejN4N7i+6ErND/sM94Eqpj/e7Q==
+unleash-frontend@4.12.1:
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.12.1.tgz#c60ea8a95d96dc15aa263d7300febbb156e1f95e"
+  integrity sha512-tuuSDwPhY/MqteTgNlq6Ne2o3oN3t53Mv98NjClRWdQsX4CYtpHu1fHUqdYcktI5Vfd+FbxS+BNgNbItOcjavQ==
 
-unleash-server@4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.11.2.tgz#11462a6c6e4448cc6455bd6293fb6c3370dbb4fb"
-  integrity sha512-CZmrfpNJXkXiEb+/O1c21Ld8xRdN3Pv81AZUwB18t1atSXpBWRclefalWvcaNO7kuu6eCUiInmn796NKG9OsnQ==
+unleash-server@4.12.3:
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.12.3.tgz#f080d6f54f74558ddd323a8fc17f72baa0e2c380"
+  integrity sha512-8CvSUPKhb5MSXm4ZyJxKWoVsgX0rfB6ZxWdI/nQxor0kobjq/CkQQGW67onPfEsFjVmTs/Ng/4ycfaJ8AzCLQA==
   dependencies:
     "@unleash/express-openapi" "^0.2.0"
     async "^3.2.3"
@@ -2820,7 +2820,7 @@ unleash-server@4.11.2:
     make-fetch-happen "^10.1.2"
     memoizee "^0.4.15"
     mime "^3.0.0"
-    multer "^1.4.1"
+    multer "^1.4.4"
     mustache "^4.1.0"
     nodemailer "^6.5.0"
     openapi-types "^11.0.0"
@@ -2835,7 +2835,7 @@ unleash-server@4.11.2:
     serve-favicon "^2.5.0"
     stoppable "^1.1.0"
     type-is "^1.6.18"
-    unleash-frontend "4.11.2"
+    unleash-frontend "4.12.1"
     uuid "^8.3.2"
 
 unpipe@1.0.0, unpipe@~1.0.0:
