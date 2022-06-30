@@ -185,6 +185,13 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
+ajv-formats@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ajv-formats/-/ajv-formats-2.1.1.tgz#6e669400659eb74973bbf2e33327180a0996b520"
+  integrity sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==
+  dependencies:
+    ajv "^8.0.0"
+
 ajv@^6.10.2:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
@@ -193,6 +200,16 @@ ajv@^6.10.2:
     fast-deep-equal "^3.1.1"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@^8.0.0, ajv@^8.11.0:
+  version "8.11.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.11.0.tgz#977e91dd96ca669f54a11e23e378e33b884a565f"
+  integrity sha512-wGgprdCvMalC0BztXvitD2hC04YffAvtsUn93JbGXYLAtCUO4xd17mCCZQxUOItiBwZvJScWo8NIvQMQ71rdpg==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    json-schema-traverse "^1.0.0"
+    require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
 ansi-regex@^5.0.1:
@@ -1230,10 +1247,10 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
-json-schema-to-ts@^2.0.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/json-schema-to-ts/-/json-schema-to-ts-2.3.0.tgz#56f4f63204c53d88458bec9525328c7d6ef73e9f"
-  integrity sha512-qBE94lvOfcVmedIgHkKNhDxTG1gPZW8pPIUpRtbPee54jGF2RZnyEOpDdowCU219sXCJ8SDVEMUCG4oMFw7pgA==
+json-schema-to-ts@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/json-schema-to-ts/-/json-schema-to-ts-2.5.3.tgz#10a1ad27a3cc6117ae9c652cc583a9e0ed10f0c8"
+  integrity sha512-2vABI+1IZNkChaPfLu7PG192ZY9gvRY00RbuN3VGlNNZkvYRpIECdBZPBVMe41r3wX0sl9emjRyhHT3gTm7HIg==
   dependencies:
     "@types/json-schema" "^7.0.9"
     ts-algebra "^1.1.1"
@@ -1243,6 +1260,11 @@ json-schema-traverse@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz#69f6a87d9513ab8bb8fe63bdb0979c448e684660"
   integrity sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
+
+json-schema-traverse@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz#ae7bcb3656ab77a73ba5c49bf654f38e6b6860e2"
+  integrity sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==
 
 json-schema@^0.4.0:
   version "0.4.0"
@@ -1679,10 +1701,10 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-openapi-types@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-11.0.0.tgz#766f1ee2de3fa701947e993564e3d0a362fc2026"
-  integrity sha512-GB+QO6o1hAtKsb8tP3/FTD5jpkdKrf42L4Gel9UySngMurzr+Q9pO+dtnmySQCzoCEfJr39IH6bveEn71xNcVg==
+openapi-types@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-12.0.0.tgz#458a99d048f9eae1c067e15d56a8bfb3726041f1"
+  integrity sha512-6Wd9k8nmGQHgCbehZCP6wwWcfXcvinhybUTBatuhjRsCxUIujuYFZc9QnGeae75CyHASewBtxs0HX/qwREReUw==
 
 owasp-password-strength-test@^1.3.0:
   version "1.3.0"
@@ -1986,6 +2008,11 @@ require-directory@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
   integrity sha1-jGStX9MNqxyXbiNE/+f3kqam30I=
+
+require-from-string@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
+  integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
 
 require-main-filename@^2.0.0:
   version "2.0.0"
@@ -2434,17 +2461,19 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
-unleash-frontend@4.12.4:
-  version "4.12.4"
-  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.12.4.tgz#132392c437f0f7d274f3639ed250dca9b8851881"
-  integrity sha512-+r6IwcQlsqNFSjtJHVdCqZrmVYc5aQDv3UbRkPFKvLSITwzfYUesQkOCP+WdT/89mHDnVB59JP17LWdcq3mtFA==
+unleash-frontend@4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/unleash-frontend/-/unleash-frontend-4.13.0.tgz#b11c284ca139f320743899bc911bfdde19c604ac"
+  integrity sha512-W3g4vVuQE8l2wW+a921sxpk4/A7bGDUkroy7Ilh4qzdKgQ/WpHtQ5sU7ISfsMuam6M9M9JaF2tm5FoaSUcmMHA==
 
-unleash-server@4.12.6:
-  version "4.12.6"
-  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.12.6.tgz#ab8f0465b4c477e3c3c3c827b8146ba44be5b5db"
-  integrity sha512-TwaC4NiIXDSijFKnUOIUk4HE7Stmxc5HkCIAca4qpmYOe1xmUe+PYpPsOcita8jIcXJZyh51V0IZG3rOv/lY2A==
+unleash-server@4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/unleash-server/-/unleash-server-4.13.0.tgz#f1e556a20fd380df504dfba7eea450ef4fc5cada"
+  integrity sha512-vh9TBZkRx3R/97umajGaroQszgE4Qqev7hu/GR3slrRyshmJmCr0n7yKpCxU6Y4mVzpQK/vjw9oNrTkvzOSPWA==
   dependencies:
     "@unleash/express-openapi" "^0.2.0"
+    ajv "^8.11.0"
+    ajv-formats "^2.1.1"
     async "^3.2.3"
     bcryptjs "^2.4.3"
     compression "^1.7.4"
@@ -2465,7 +2494,7 @@ unleash-server@4.12.6:
     helmet "^5.0.0"
     joi "^17.3.0"
     js-yaml "^4.1.0"
-    json-schema-to-ts "^2.0.0"
+    json-schema-to-ts "^2.5.3"
     knex "^2.0.0"
     log4js "^6.0.0"
     make-fetch-happen "^10.1.2"
@@ -2474,7 +2503,7 @@ unleash-server@4.12.6:
     multer "^1.4.5-lts.1"
     mustache "^4.1.0"
     nodemailer "^6.5.0"
-    openapi-types "^11.0.0"
+    openapi-types "^12.0.0"
     owasp-password-strength-test "^1.3.0"
     parse-database-url "^0.3.0"
     pg "^8.7.3"
@@ -2486,7 +2515,7 @@ unleash-server@4.12.6:
     serve-favicon "^2.5.0"
     stoppable "^1.1.0"
     type-is "^1.6.18"
-    unleash-frontend "4.12.4"
+    unleash-frontend "4.13.0"
     uuid "^8.3.2"
 
 unpipe@1.0.0, unpipe@~1.0.0:
