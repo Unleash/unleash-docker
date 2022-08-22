@@ -37,6 +37,12 @@ services:
       UNLEASH_API_TOKEN: "default:development.unleash-insecure-api-token"
     depends_on:
       - web
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:3000/proxy/health || exit 1
+      interval: 1s
+      timeout: 1m
+      retries: 5
+
 
   # The Unleash server contains the Unleash configuration and
   # communicates with server-side SDKs and the Unleash Proxy
@@ -61,11 +67,13 @@ services:
       # key from `proxy.environment.UNLEASH_PROXY_CLIENT_KEYS`
       # instead.
       INIT_CLIENT_API_TOKENS: "default:development.unleash-insecure-api-token"
+      # Changing log levels:
+      # LOG_LEVEL: "debug"
     depends_on:
       - db
     command: node index.js
     healthcheck:
-      test: ["CMD", "nc",  "-z", "db", "5432"]
+      test: wget --no-verbose --tries=1 --spider http://localhost:4242/health || exit 1
       interval: 1s
       timeout: 1m
       retries: 5
