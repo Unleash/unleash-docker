@@ -54,6 +54,7 @@ unleash locally without setting up a database or node.
 $ docker-compose build
 $ docker-compose up
 ```
+On some computers the database won't start in time for unleash the first time you run this. If unleash fails to reach the database, `docker-compose restart web` usually resolves the issue.
 
 ### Requirements
 We are using docker-compose version 3.9 and it requires:
