@@ -88,7 +88,7 @@ services:
       # trust incoming connections blindly (DON'T DO THIS IN PRODUCTION!)
       POSTGRES_HOST_AUTH_METHOD: "trust"
     healthcheck:
-      test: ["CMD", "pg_isready", "--username=postgres", "--host=127.0.0.1", "--port=5432"]
+      test: ["CMD", "nc",  "-z", "db", "5432"]
       interval: 2s
       timeout: 1m
       retries: 5
