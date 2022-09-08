@@ -66,5 +66,5 @@ For more info, check out the compatibility matrix on Docker's website: [compatib
 https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-matrix)
 
 ### Building the docker image
-Building the docker image is now done in the [main repo for Unleash](https://github.com/Unleash/unleash).
-This means that this repo is now just a docker-compose file, if you'd like to try the most recent version of unleash, update the image reference for the web service in docker-compose.yml
+
+The docker image is very small shim on top of unleashorg/unleash to include wait-for and allow the docker-compose configuration to ensure that we're not starting unleash until the database is actually up.

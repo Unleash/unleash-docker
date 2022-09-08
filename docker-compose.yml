@@ -47,7 +47,7 @@ services:
   # The Unleash server contains the Unleash configuration and
   # communicates with server-side SDKs and the Unleash Proxy
   web:
-    image: unleashorg/unleash-server:4.15.1
+    build: .
     ports:
       - "4242:4242"
     environment:
@@ -68,7 +68,7 @@ services:
       # LOG_LEVEL: "debug"
     depends_on:
       - db
-    command: node index.js
+    command: ["./wait-for", "db:5432", "--", "node", "index.js"]
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:4242/health || exit 1
       interval: 1s
