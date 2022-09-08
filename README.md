@@ -66,14 +66,5 @@ For more info, check out the compatibility matrix on Docker's website: [compatib
 https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-matrix)
 
 ### Building the docker image
-We expect a build-arg for which node-version to build with so if you're building using the docker cli, you have to use `--build-arg NODE_VERSION=14-alpine` OR `--build-arg NODE_VERSION=16-alpine`
-
-## Upgrade version
-When we upgrade the `unleash-version` this project should be tagged with the same version number.
-
-```bash
-git tag -a v3.7.0 -m "upgrade to unleash-server v3.7.0"
-git push origin main --follow-tags
-```
-
-This will automatically trigger a github actions which will build the new tag and push it to docker-hub. 
+Building the docker image is now done in the [main repo for Unleash](https://github.com/Unleash/unleash).
+This means that this repo is now just a docker-compose file, if you'd like to try the most recent version of unleash, update the image reference for the web service in docker-compose.yml

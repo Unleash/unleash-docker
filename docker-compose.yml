@@ -20,7 +20,7 @@ services:
   # For security reasons, front-end clients shouldn't (and can't) talk
   # directly to the Unleash server.
   proxy:
-    image: unleashorg/unleash-proxy:v0.8.1
+    image: unleashorg/unleash-proxy:v0.10.4
     ports:
       - "3000:3000"
     environment:
@@ -47,10 +47,7 @@ services:
   # The Unleash server contains the Unleash configuration and
   # communicates with server-side SDKs and the Unleash Proxy
   web:
-    build:
-      context: .
-      args:
-        NODE_VERSION: 16-alpine
+    image: unleashorg/unleash-server:4.15.1
     ports:
       - "4242:4242"
     environment:
