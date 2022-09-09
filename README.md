@@ -67,4 +67,6 @@ https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-m
 
 ### Building the docker image
 
-The docker image is very small shim on top of unleashorg/unleash to include wait-for and allow the docker-compose configuration to ensure that we're not starting unleash until the database is actually up.
+This repo contains a docker compose file and an extended dockerfile for running the Unleash server. The docker compose file will start a database, the Unleash server, and an Unleash proxy.
+
+The extended Unleash dockerfile is very small shim on top of [unleash/unleash](https://github.com/Unleash/unleash/) to include wait-for and allow the docker-compose configuration to ensure that we're not starting Unleash until the database is up and running.
