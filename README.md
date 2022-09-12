@@ -1,40 +1,7 @@
-## Use Unleash Docker Image
+## Unleash in Docker compose
+This repo contains a docker compose file and an extended dockerfile for running the Unleash server. The docker compose file will start a database, the Unleash server, and an Unleash proxy.
 
-
-**Useful links:**
-
-- [Docker image on dockerhub](https://hub.docker.com/r/unleashorg/unleash-server/)
-- [Unleash Helm Chart on artifacthub](https://artifacthub.io/packages/helm/unleash/unleash)
-
-**Steps:**
-
-1. Create a network by running `docker network create unleash`
-2. Start a postgres database:
-
-```sh
-docker run -e POSTGRES_PASSWORD=some_password \
-  -e POSTGRES_USER=unleash_user -e POSTGRES_DB=unleash \
-  --network unleash --name postgres postgres
-```
-
-3. Start Unleash via docker:
-
-```sh
-docker run -p 4242:4242 \
-  -e DATABASE_HOST=postgres -e DATABASE_NAME=unleash \
-  -e DATABASE_USERNAME=unleash_user -e DATABASE_PASSWORD=some_password \
-  -e DATABASE_SSL=false \
-  --network unleash unleashorg/unleash-server
-```
-
-All configuration options [available in our documentation](https://docs.getunleash.io/docs/deploy/configuring_unleash). 
-
-### User accounts
-- Once started up, you'll have a user with 
-  - `username: admin`
-  - `password: unleash4all`
-
-This user is an admin user and can be used to create other users, we do suggest you change the password :)
+The extended Unleash dockerfile is very small shim on top of [unleash/unleash](https://github.com/Unleash/unleash/) to include wait-for and allow the docker-compose configuration to ensure that we're not starting Unleash until the database is up and running.
 
 #### Docker-compose
 
@@ -42,6 +9,15 @@ This user is an admin user and can be used to create other users, we do suggest 
 2. Run `docker-compose build` in repository root folder.
 3. Run `docker-compose up` in repository root folder.
 
+**Useful links:**
+
+- [Docker image on dockerhub](https://hub.docker.com/r/unleashorg/unleash-server/)
+- [Unleash Helm Chart on artifacthub](https://artifacthub.io/packages/helm/unleash/unleash)
+
+### User accounts
+- Once started up, you'll have a user with 
+  - `username: admin`
+  - `password: unleash4all`
 
 
 ## Work locally with this repo 
@@ -65,15 +41,5 @@ We are using docker-compose version 3.9 and it requires:
 For more info, check out the compatibility matrix on Docker's website: [compatibility-matrix](
 https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-matrix)
 
-### Building the docker image
-We expect a build-arg for which node-version to build with so if you're building using the docker cli, you have to use `--build-arg NODE_VERSION=14-alpine` OR `--build-arg NODE_VERSION=16-alpine`
 
-## Upgrade version
-When we upgrade the `unleash-version` this project should be tagged with the same version number.
 
-```bash
-git tag -a v3.7.0 -m "upgrade to unleash-server v3.7.0"
-git push origin main --follow-tags
-```
-
-This will automatically trigger a github actions which will build the new tag and push it to docker-hub. 

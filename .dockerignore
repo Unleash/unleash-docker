@@ -1,2 +1,2 @@
-tools/
-node_modules/
+*
+!wait-for
