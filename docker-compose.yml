@@ -49,12 +49,12 @@ services:
   web:
     build: .
     ports:
-      - "4242:4242"
+      - "80:4242"
     environment:
       # This points Unleash to its backing database (defined in the `db` section below)
-      DATABASE_URL: "postgres://postgres:unleash@db/postgres"
+      # DATABASE_URL: "postgres://postgres:unleash@db/postgres"
       # Disable SSL for database connections. @chriswk: why do we do this?
-      DATABASE_SSL: "false"
+      # DATABASE_SSL: "false"
       # Initialize Unleash with a default set of client API tokens. To
       # initialize Unleash with multiple tokens, separate them with a
       # comma (`token1,token2`).
@@ -68,9 +68,10 @@ services:
       # LOG_LEVEL: "debug"
     depends_on:
       - db
-    command: ["./wait-for", "db:5432", "--", "node", "index.js"]
+      #command: ["./wait-for", "db:5432", "--", "node", "index.js"]
+    command: ["node", "index.js"]
     healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:4242/health || exit 1
+      test: wget --no-verbose --tries=1 --spider http://localhost:80/health || exit 1
       interval: 1s
       timeout: 1m
       retries: 5
